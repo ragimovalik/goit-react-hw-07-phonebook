@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { addContact } from '../../redux/creators';
 import { addContact } from '../../redux/slice';
 import InputBox from '../InputBox/InputBox';
 import styles from './Form.module.css';
@@ -8,7 +7,6 @@ import styles from './Form.module.css';
 const Form = () => {
   const [localState, setLocalState] = useState({ name: '', number: '' });
   const { items } = useSelector(state => state.contacts);
-  // const items = useSelector(state => state.contacts);
   const dispatch = useDispatch();
 
   const setDefault = () =>
@@ -89,13 +87,5 @@ const Form = () => {
 export default Form;
 
 /*
-const mapStateToProps = state => ({
-  contacts: state.contactReducer,
-});
 
-const mapDispatchToProps = dispatch => ({
-  onSubmit: newContact => dispatch(addContact(newContact)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Form);
 */

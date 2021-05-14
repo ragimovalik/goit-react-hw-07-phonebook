@@ -1,21 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const storedData = localStorage.getItem('al-phonebook');
-const parsedData = JSON.parse(storedData);
+// const storedData = localStorage.getItem('al-phonebook');
+// const parsedData = JSON.parse(storedData);
 
-const initialContacts = parsedData?.length >= 1 ? parsedData : [];
-
-/*
-{ id: 'id-12345', name: 'Daniel Defoe', number: '987-6541210' },
-{ id: 'id-54321', name: 'Jonathan Swift', number: '987-6542210' },
-{ id: 'id-98765', name: 'Robert Stevenson', number: '987-6543210' },
-{ id: 'id-56789', name: 'Lewis Carroll', number: '987-6544210' },
-*/
+// const initialContacts = parsedData?.length >= 1 ? parsedData : [];
 
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState: {
-    items: initialContacts,
+    items: [],
     filter: '',
   },
 

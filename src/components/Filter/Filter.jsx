@@ -2,7 +2,6 @@ import InputBox from '../InputBox/InputBox';
 import styles from './Filter.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from '../../redux/slice';
-// import { setFilter } from '../../redux/creators';
 
 const Filter = () => {
   const { filter } = useSelector(state => state.contacts);
@@ -32,13 +31,3 @@ const Filter = () => {
 };
 
 export default Filter;
-
-// const mapStateToProps = state => ({
-//   contacts: state.contactReducer,
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   onChange: event => dispatch(filterContacts(event.currentTarget.value)),
-// });
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Filter);
