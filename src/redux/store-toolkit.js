@@ -10,13 +10,3 @@ export default configureStore({
   middleware: [thunk, logger],
   devTools: process.env.NODE_ENV === 'development',
 });
-
-// import contactsReducer from './slice';
-
-// export default configureStore({
-//   reducer: {
-//     contacts: contactsReducer,
-//   },
-//   middleware: [thunk, logger],
-//   devTools: process.env.NODE_ENV === 'development',
-// });
