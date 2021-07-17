@@ -1,20 +1,21 @@
-// import { useEffect } from 'react';
-// import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import PageTitle from './components/PageTitle/PageTitle';
 import Form from './components/Form/Form';
 import ContactList from './components/ContactList/ContactList';
 import Filter from './components/Filter/Filter';
+import { getContacts } from './redux/operations';
 
 const App = () => {
-  // const { items } = useSelector(state => state.contacts);
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   return localStorage.setItem('al-phonebook', JSON.stringify(items));
-  // }, [items]);
+  useEffect(() => {
+    dispatch(getContacts());
+  }, []); //eslint-disable-line
 
   return (
     <>
-      <PageTitle title={'HomeWork #7 (Phonebook) of React'} />
+      <PageTitle title={'HW #7 / Async Redux'} />
       <Form />
       <Filter />
       <ContactList />
