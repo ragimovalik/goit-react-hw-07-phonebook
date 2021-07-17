@@ -17,32 +17,3 @@ export const deleteContactSuccess = createAction(
 export const deleteContactError = createAction('contacts/deleteContactError');
 
 export const setFilter = createAction('contacts/setFilter');
-
-/*
-const headers = {
-  'Content-Type': 'application/json',
-};
-
-const body = { name, number: phone };
-
-const b = () => {
-  fetch(`${BASE_URL}/contacts`, {
-    method: 'POST',
-    headers,
-    body: JSON.stringify(body),
-  })
-  .then(res => res.json())
-  .then(console.log);
-};
-
-const toDel = 'XPDelA6';
-
-const c = () => {
-  fetch(`${BASE_URL}/contacts/${toDel}`, {
-    method: 'DELETE',
-  });
-};
-
-
-//=======================================================
-*/
