@@ -3,10 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addContact } from '../../redux/operations';
 import InputBox from '../InputBox/InputBox';
 import styles from './Form.module.css';
+import { getContacts } from '../../redux/selectors';
 
 const Form = () => {
   const [localState, setLocalState] = useState({ name: '', number: '' });
-  const { items } = useSelector(state => state.contacts);
+  const items = useSelector(getContacts);
   const dispatch = useDispatch();
 
   const setDefault = () =>

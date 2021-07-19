@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.4.0",
     "@reduxjs/toolkit": "^1.5.1",
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
@@ -27,7 +28,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "netlify deploy -p",
-    "server": "json-server --watch db.json --port 3001 -d 300"
+    "server": "json-server --watch db.json --port 3001 -d 500"
   },
   "eslintConfig": {
     "extends": [

@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from '../../redux/actions';
 import InputBox from '../InputBox/InputBox';
 import styles from './Filter.module.css';
+import { getFilter } from '../../redux/selectors';
 
 const Filter = () => {
-  const { filter } = useSelector(state => state.contacts);
+  const filter = useSelector(getFilter);
   // const filter = useSelector(state => state.filter);
   const dispatch = useDispatch();
 

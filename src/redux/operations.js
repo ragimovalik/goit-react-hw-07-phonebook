@@ -10,7 +10,7 @@ export const getContacts = () => async dispatch => {
     const data = await response.json();
     dispatch(actions.getContactsSuccess(data));
   } catch (error) {
-    dispatch(actions.getContactsError(error));
+    dispatch(actions.getContactsError(error.message));
   }
 };
 
@@ -30,7 +30,7 @@ export const addContact = contact => async dispatch => {
     const data = await response.json();
     dispatch(actions.addContactSuccess(data));
   } catch (error) {
-    dispatch(actions.addContactError(error));
+    dispatch(actions.addContactError(error.message));
   }
 };
 
@@ -44,6 +44,6 @@ export const deleteContact = contactId => async dispatch => {
     });
     dispatch(actions.deleteContactSuccess(contactId));
   } catch (error) {
-    dispatch(actions.deleteContactError(error));
+    dispatch(actions.deleteContactError(error.message));
   }
 };
