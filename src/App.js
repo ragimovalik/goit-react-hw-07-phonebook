@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { Toaster } from 'react-hot-toast';
+
 import PageTitle from './components/PageTitle/PageTitle';
 import Form from './components/Form/Form';
 import ContactList from './components/ContactList/ContactList';
@@ -19,6 +21,7 @@ const App = () => {
       <Form />
       <Filter />
       <ContactList />
+      <Toaster />
     </>
   );
 };

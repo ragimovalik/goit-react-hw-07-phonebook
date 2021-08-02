@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { toast } from 'react-hot-toast';
 import { addContact } from '../../redux/operations';
 import InputBox from '../InputBox/InputBox';
 import styles from './Form.module.css';
@@ -24,8 +25,8 @@ const Form = () => {
   };
 
   const contactsChecker = name => {
-    return items?.find(contact =>
-      contact.name.toLowerCase().includes(name.toLowerCase()),
+    return items?.find(
+      contact => contact.name.toLowerCase() === name.toLowerCase(),
     );
   };
 
@@ -37,7 +38,7 @@ const Form = () => {
     const newContact = { name, number };
 
     contactsChecker(name)
-      ? alert(`${name} is already in contacts`)
+      ? toast(`${name} is already in contacts`)
       : dispatch(addContact(newContact));
 
     setDefault();

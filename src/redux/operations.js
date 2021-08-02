@@ -1,4 +1,5 @@
 import * as actions from './actions';
+import toast from 'react-hot-toast';
 
 const BASE_URL = 'http://localhost:3001';
 
@@ -10,6 +11,7 @@ export const getContacts = () => async dispatch => {
     const data = await response.json();
     dispatch(actions.getContactsSuccess(data));
   } catch (error) {
+    toast.error(error.message);
     dispatch(actions.getContactsError(error.message));
   }
 };
@@ -29,7 +31,10 @@ export const addContact = contact => async dispatch => {
     });
     const data = await response.json();
     dispatch(actions.addContactSuccess(data));
+
+    toast.success('Contact successfully added');
   } catch (error) {
+    toast.error(error.message);
     dispatch(actions.addContactError(error.message));
   }
 };
@@ -43,7 +48,9 @@ export const deleteContact = contactId => async dispatch => {
       body: JSON.stringify(contactId),
     });
     dispatch(actions.deleteContactSuccess(contactId));
+    toast.success('Contact deleted');
   } catch (error) {
+    toast.error(error.message);
     dispatch(actions.deleteContactError(error.message));
   }
 };
